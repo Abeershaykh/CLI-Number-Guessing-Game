@@ -1,17 +1,17 @@
 #! /usr/bin/env node
 import inquirer from "inquirer";
-const randomNumber = Math.floor(Math.random() * 3 + 2);
-console.log("Welcome to Number Guessing Game");
+const randomNumber = Math.floor(Math.random() * 10 + 1);
+console.log(randomNumber);
 const answers = await inquirer.prompt([
     {
-        name: "UserGuessedNumber",
+        name: "GuessedNumber",
         type: "number",
-        message: "Please guess a number between 1-6: ",
-    },
+        message: "Please guess a number between 1 to 10: ",
+    }
 ]);
-if (answers.UserGuessedNumber === randomNumber) {
-    console.log(`Congratulations! You guessed correct number.`);
+if (randomNumber === answers.GuessedNumber) {
+    console.log("you guessed the correct number");
 }
 else {
-    console.log(`You guessed wrong number.`);
+    console.log("you guessed the wrong number");
 }
